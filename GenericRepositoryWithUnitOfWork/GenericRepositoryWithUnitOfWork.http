@@ -1,0 +1,6 @@
+@GenericRepositoryWithUnitOfWork_HostAddress = http://localhost:5094
+
+GET {{GenericRepositoryWithUnitOfWork_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
