@@ -4,6 +4,7 @@ using GenericRepositoryWithUnitOfWork.ViewModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace GenericRepositoryWithUnitOfWork.Controllers
 {
@@ -49,9 +50,16 @@ namespace GenericRepositoryWithUnitOfWork.Controllers
             }
             catch (Exception)
             {
-
+                await _unitOfWork.RollbackAsync();
                 throw;
             }
         }
+        //[HttpGet]
+        //public async Task<IActionResult> Get(string productName)
+        //{
+        //    return await _unitOfWork.ProductRepository.GetProductsByName(productName);
+
+        //}
+
     }
 }
